@@ -67,3 +67,7 @@ That's for parameter-efficient fine-tuning (LoRA/QLoRA), where you only train sm
 - [Kaggle](https://www.kaggle.com/docs/efficient-gpu-usage): free notebooks with a weekly GPU quota, good for small fine-tuning experiments
 - [Google Colab](https://research.google.com/colaboratory/faq.html): browser-based notebooks with a free GPU tier (with usage limits) and paid plans for more power
 - [RunPod](https://www.runpod.io/pricing): cloud GPUs rented by the hour, a cheap option when you need more than the free tiers
+
+## Safety fine-tuned models (guardrails)
+
+Safety guardrail models are basically general models fine-tuned to classify content as safe or unsafe, so they can sit before and/or after your main model and check both the user's input and the model's response. A good example is NVIDIA's [Llama 3.1 Nemotron Safety Guard 8B](https://build.nvidia.com/nvidia/llama-3_1-nemotron-safety-guard-8b-v3/modelcard), which is Llama-3.1-8B-Instruct LoRA-tuned on a safety dataset (so the same kind of fine-tuning we talked about). Other ones worth looking at are Meta's [Llama Guard 4](https://huggingface.co/meta-llama/Llama-Guard-4-12B) (built on Llama 4) and Alibaba's [Qwen3Guard](https://huggingface.co/collections/Qwen/qwen3guard) (built on Qwen3).
