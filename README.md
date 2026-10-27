@@ -4,18 +4,19 @@ Slides from a live session (Hyperskill, October 2026) for people who use LLM API
 
 The short answer: **fine-tuning changes how a model answers, not what it knows.** It's a good fit for narrow, repetitive tasks where you already know what good output looks like and need it cheaper, faster, more consistent, or running on your own hardware. It's a poor way to teach a model your documents, products or policies; those belong in the prompt, retrieval or tools.
 
-- **Slides (PDF):** [finetuning-intro.pdf](finetuning-intro.pdf). No setup needed; GitHub shows it in the browser
-- **Audience questions, with answers:** [audience-qa.md](audience-qa.md)
+- **Slides (PDF):** [finetuning_intro.pdf](finetuning_intro.pdf). No setup needed; GitHub shows it in the browser
+- **Audience questions, with answers:** [audience_qa.md](audience_qa.md)
 
 ## Repository contents
 
 | File | What it is |
 |---|---|
-| `finetuning-intro.pdf` | The slides as a PDF |
+| `finetuning_intro.pdf` | The slides as a PDF |
 | `finetuning_intro_deck.md` | The slides, written in [Slidev](https://sli.dev) markdown |
 | `style.css` | Global styles for the deck |
-| `audience-qa.md` | Questions asked during the session, and answers |
+| `audience_qa.md` | Questions asked during the session, and answers |
 | `Dockerfile`, `compose.yaml` | Run or export the deck without installing Node |
+| `LICENSE` | CC BY 4.0 license text |
 
 ## Viewing the slides
 
@@ -48,7 +49,7 @@ The startup log will still print `localhost:3030`; that's the port inside the co
 docker compose run --rm export
 ```
 
-This writes `finetuning-intro.pdf` to the repository folder.
+This writes `finetuning_intro.pdf` to the repository folder.
 
 ### Without Docker
 
@@ -66,3 +67,7 @@ npm run build                     # static site in dist/, e.g. for GitHub Pages
 
 - **Questions about the slides or fine-tuning:** start a [discussion](../../discussions) (see the [welcome post](https://github.com/hyperskill-content/finetuning_intro_session/discussions/1) first)
 - **Found a mistake or a broken link:** open an [issue](../../issues)
+
+## License
+
+Licensed under [CC BY 4.0](LICENSE): you're free to share and adapt this material, including commercially, as long as you give credit.

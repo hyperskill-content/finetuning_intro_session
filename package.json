@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "slidev finetuning_intro_deck.md",
     "build": "slidev build finetuning_intro_deck.md",
-    "export": "slidev export finetuning_intro_deck.md --output finetuning-intro.pdf --timeout 60000"
+    "export": "slidev export finetuning_intro_deck.md --output finetuning_intro.pdf --timeout 60000"
   },
   "devDependencies": {
     "@slidev/cli": "^53.0.0",

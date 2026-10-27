@@ -685,7 +685,7 @@ An open-source tool for fine-tuning open models on a single GPU, including a fre
 
 <div class="card">
 
-Unsloth (and similar automated training solutions) make the step 3 easy. Steps 2 and 4 are still most of the work.**
+Unsloth (and similar automated training solutions) make step 3 easy. Steps 2 and 4 are still most of the work.
 
 </div>
 
