@@ -1,0 +1,15 @@
+{
+  "name": "finetuning-intro-deck",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev finetuning_intro_deck.md",
+    "build": "slidev build finetuning_intro_deck.md",
+    "export": "slidev export finetuning_intro_deck.md --output finetuning-intro.pdf --timeout 60000"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-apple-basic": "^0.25.1",
+    "playwright-chromium": "^1.64.1"
+  }
+}

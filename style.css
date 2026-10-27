@@ -1,0 +1,136 @@
+:root {
+  --accent: #2563eb;
+  --muted: #9ca3af;
+  --line: #d4d4d4;
+}
+
+/* Training pipeline: numbered steps on a thin line */
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 3.5rem 0 3rem;
+}
+
+.pipeline .step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.pipeline .step::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--line);
+}
+
+.pipeline .step:first-child::before,
+.pipeline .lane-label + .step::before { left: 50%; }
+.pipeline .step:last-child::before { right: 50%; }
+
+.pipeline .step span {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+  background: #fff;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.pipeline .step small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.pipeline .optional { color: var(--muted); }
+.pipeline .optional span { border-style: dashed; }
+
+.pipeline .here { color: var(--accent); }
+.pipeline .here span {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.pipeline .here small {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pipeline .lane-label {
+  padding: 0.4rem 1rem 0 0;
+  text-align: right;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Elbow arrow from step 5 of one row down into step 1 of the next row.
+   Columns are 1/5 wide, so step 5 is centered at 90% and the next row's
+   first step (after its lane label) at 30%. */
+.pipeline:has(+ .pipeline-link) { margin-bottom: 0.75rem; }
+.pipeline-link + .pipeline { margin-top: 0; }
+
+.pipeline-link {
+  position: relative;
+  height: 3rem;
+}
+
+.pipeline-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(30% - 1px);
+  right: calc(10% - 1px);
+  height: 50%;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+}
+
+.pipeline-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 8px;
+  left: calc(30% - 1px);
+  width: 2px;
+  background: var(--muted);
+}
+
+.pipeline-link i {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--muted);
+}
+
+/* The theme restores bullets for ul but not numbers for ol */
+.slidev-layout ol {
+  list-style: decimal;
+  margin-bottom: 1rem;
+}
+
+/* Intro sentence under a heading, set apart from the list that follows */
+.lead {
+  margin: 1.5rem 0 2.5rem;
+}

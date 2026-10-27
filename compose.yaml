@@ -1,0 +1,23 @@
+x-slides: &slides
+  build: .
+  image: finetuning-intro-deck
+  init: true
+  volumes:
+    - .:/app
+    # Keep the image's node_modules instead of the host's
+    - /app/node_modules
+
+services:
+  # Dev server with hot reload: http://localhost:3030
+  # Port taken? SLIDES_PORT=3031 docker compose up
+  slides:
+    <<: *slides
+    ports:
+      - "127.0.0.1:${SLIDES_PORT:-3030}:3030"
+
+  # PDF export: docker compose run --rm export
+  export:
+    <<: *slides
+    profiles: [tools]
+    command: npm run export
+    shm_size: 1gb
