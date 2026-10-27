@@ -64,5 +64,5 @@ npm run build                     # static site in dist/, e.g. for GitHub Pages
 
 ## Questions or feedback
 
-- **Questions about the slides or fine-tuning:** start a [discussion](../../discussions)
+- **Questions about the slides or fine-tuning:** start a [discussion](../../discussions) (see the [welcome post](https://github.com/hyperskill-content/finetuning_intro_session/discussions/1) first)
 - **Found a mistake or a broken link:** open an [issue](../../issues)
